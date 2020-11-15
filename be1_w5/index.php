@@ -1,4 +1,6 @@
 <?php
+require_once './config/config.php';
+require_once './XoaDau.php';
 require_once './config/database.php';
 spl_autoload_register(function ($class_name) {
     require './app/model/' . $class_name . '.php';
@@ -21,7 +23,8 @@ $categoryList = $category->getCategories();
             width: 150px;
             height: 120px;
         }
-        .card{
+
+        .card {
             text-align: center;
             margin-top: 10px;
             padding: 5px;
@@ -55,9 +58,9 @@ $categoryList = $category->getCategories();
         foreach ($productList as $product) {
         ?>
             <div class="card" style="display: inline-block;">
-                <img class="card-img-top img-fluid" src="images/<?php echo $product['product_photo'] ?>" alt="">
+                <img class="card-img-top img-fluid" src="/<?php echo BASE_URL;?>/images/<?php echo $product['product_photo'] ?>" alt="">
                 <div class="card-body">
-                    <a class="card-title"><?php echo $product['product_name'] ?></a>
+                    <a class="card-title" href="product.php?<?php echo vn_to_str($product['product_name']) ?>.<?php echo $product['id']?>"><?php echo $product['product_name'] ?></a>
                     <p class="card-text"><?php echo $product['product_description'] ?></p>
                     <p class="card-text"><?php echo $product['product_price'] ?></p>
                 </div>
