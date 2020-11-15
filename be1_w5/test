@@ -1,0 +1,38 @@
+<table>
+        <!-- <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>description</td>
+            <td>price</td>
+            <td>photo</td> 
+        </tr> -->
+        <?php
+        foreach ($productList as $product) {
+        ?>
+            <div class="card" style="display: inline-block;">
+                <img class="card-img-top img-fluid" src="images/<?php echo $product['product_photo'] ?>" alt="">
+                <div class="card-body">
+                    <h4 class="card-title"><?php echo $product['product_name'] ?></h4>
+                    <p class="card-text"><?php echo $product['product_description'] ?></p>
+                    <p class="card-text"><?php echo $product['product_price'] ?></p>
+                </div>
+            </div>
+            <!-- <tr>
+            <td><?php //echo $product['id']
+                ?></td>
+            <td><?php //echo $product['product_name']
+                ?></td>
+            <td><?php //echo $product['product_description']
+                ?></td>
+            <td><?php //echo $product['product_price']
+                ?></td>
+            <td>
+                <img src="images/<?php //echo $product['product_photo']
+                                    ?>" alt="test">
+            </td>
+        </tr> -->
+        <?php
+        }
+        ?>
+    </table>
+    
